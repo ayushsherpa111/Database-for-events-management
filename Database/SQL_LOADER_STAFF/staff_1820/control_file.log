@@ -1,0 +1,59 @@
+
+SQL*Loader: Release 12.2.0.1.0 - Production on Wed Apr 17 23:48:36 2019
+
+Copyright (c) 1982, 2017, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   control_file.txt
+Data File:      data_file.txt
+  Bad File:     data_file.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 0
+Errors allowed: 50
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table STAFF, loaded from every logical record.
+Insert option in effect for this table: APPEND
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+STAFF_ID                            FIRST     *   ,       CHARACTER            
+STAFF_FIRST_NAME                     NEXT     *   ,       CHARACTER            
+STAFF_LAST_NAME                      NEXT     *   ,       CHARACTER            
+GENDER                               NEXT     *   ,       CHARACTER            
+EMAIL_ID                             NEXT     *   ,       CHARACTER            
+DATE_OF_BIRTH                        NEXT     *   ,       CHARACTER            
+ROLE                                 NEXT     *   ,       CHARACTER            
+IMG1_FILE_NAME                       NEXT   100   ,       CHARACTER            
+  (FILLER FIELD)
+STAFF_IMAGE                       DERIVED     *  EOF      CHARACTER            
+    Dynamic LOBFILE.  Filename in field IMG1_FILE_NAME
+INSTRUCTOR_ID                        NEXT     *   ,       CHARACTER            
+PAY_RATE                             NEXT     *   ,       CHARACTER            
+
+
+Table STAFF:
+  1 Row successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 155136 bytes(64 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          0
+Total logical records read:             1
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Wed Apr 17 23:48:36 2019
+Run ended on Wed Apr 17 23:48:36 2019
+
+Elapsed time was:     00:00:00.16
+CPU time was:         00:00:00.11

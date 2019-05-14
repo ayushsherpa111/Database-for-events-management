@@ -1,0 +1,20 @@
+-- CONNECT system/manager;
+
+-- user-name: sys as sysdba
+-- password: Tiger
+
+CREATE USER group11 IDENTIFIED BY group11;
+-- CREATE user c##group11 identified by group11;   for oracle 12. version
+
+GRANT CREATE SESSION TO group11;
+GRANT CREATE TABLE TO group11;
+GRANT CREATE VIEW TO group11;
+GRANT CREATE SEQUENCE TO group11;
+GRANT CREATE SYNONYM TO group11;
+GRANT CREATE PROCEDURE TO group11;
+GRANT CREATE TRIGGER TO group11;
+GRANT CREATE CLUSTER TO group11;
+GRANT CREATE TYPE TO group11;
+GRANT unlimited tablespace TO group11;
+
+ALTER USER group11 quota unlimited ON system;

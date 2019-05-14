@@ -1,0 +1,66 @@
+
+-- file path
+
+@C:\Temp\CSY2038(RM)\ASSIGNMENT\create_11.sql
+@C:\Temp\CSY2038(RM)\ASSIGNMENT\alter_11.sql
+
+@C:\Temp\CSY2038(RM)\ASSIGNMENT\PL_SQL\function_11.sql
+@C:\Temp\CSY2038(RM)\ASSIGNMENT\PL_SQL\package_11.sql
+@C:\Temp\CSY2038(RM)\ASSIGNMENT\PL_SQL\procedure_11.sql
+@C:\Temp\CSY2038(RM)\ASSIGNMENT\PL_SQL\trigger_11.sql
+
+@C:\Temp\CSY2038(RM)\ASSIGNMENT\insert_11.sql
+@C:\Temp\CSY2038(RM)\ASSIGNMENT\drop_11.sql
+
+-- loading BLOB file
+cd C:\Temp\CSY2038(RM)\ASSIGNMENT\SQL_LOADER_STAFF\staff_1818
+sqlldr group11/group11 control = control_file.txt
+
+
+
+-- code
+
+SELECT * FROM TAB;
+SELECT CONSTRAINT_NAME FROM USER_CONSTRAINTS;
+SELECT TYPE_NAME FROM USER_TYPES;
+SELECT PROCEDURE_NAME FROM USER_PROCEDURES;
+-- SELECT FUNCTION_NAME FROM SYS.OBJECTS;
+SELECT TRIGGER_NAME FROM USER_TRIGGERS;
+
+
+
+-- querying data from auditing tables
+
+SELECT * FROM audit_user_event;
+SELECT * FROM audit_festival_staff;
+
+
+
+-- formatting columns 
+SET LINESIZE 240;
+
+-- for table 'audit_user_event'
+COLUMN logon_date FORMAT A30;
+COLUMN logon_time FORMAT A30;
+COLUMN logoff_date FORMAT A30;
+COLUMN logoff_time FORMAT A30;
+
+-- for table 'audit_festival_staff'
+COLUMN user_name FORMAT A30;
+COLUMN audit_date FORMAT A30;
+COLUMN audit_operation FORMAT A30;
+
+-- for table 'festival_staff'
+COLUMN site_id FORMAT 999999;
+COLUMN address FORMAT A55;
+COLUMN classroom FORMAT A75;
+
+-- for table 'staff'
+COLUMN site_id FORMAT 999999;
+COLUMN address FORMAT A55;
+COLUMN classroom FORMAT A75;
+
+
+
+DROP USER group11 CASCADE;
+
